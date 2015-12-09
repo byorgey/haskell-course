@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>CIS 194 Homework Submission</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="CIS 194 Homework Submission"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-01-20"/>
+<meta name="author" content="Zachary Wasserman"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="hwsubmission.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">CIS 194 Homework Submission</h1>
+
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Prerequisites</h2>
+<div class="outline-text-2" id="text-1">
+
+<ul>
+<li>Mac or Linux machine. This is possible on Windows, but some commands will be
+    different.
+</li>
+<li>An account on Github. If you have an existing one, feel free to use that.
+    Otherwise, sign up at <a href="https://github.com/">github.com</a>.
+</li>
+<li>Git installed. You can install via <a href="http://git-scm.com/downloads">binary</a>, or your favored package manager.
+</li>
+</ul>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Initial Setup</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>  This is a new system. If you encounter errors on our site, please copy and
+  paste the full web page into a private Piazza question. If you have trouble
+  with git/Github, please ask a public Piazza question.
+</p><ol>
+<li><a href="http://cis194.herokuapp.com/register/">Create an account</a> in our submission system. <i>Your username should be your      PennKey.</i>
+
+</li>
+<li>Now log on to Github. Change your view to the CIS194 class
+     context.
+     <div class="figure">
+<p><img src="context.png"  alt="context.png" /></p>
+<p>The context menu</p>
+</div>
+
+</li>
+<li>Click on the repository we've created with your name. The name will be in
+     the form 'hw_pennkey'. Note this repository is private, and only you
+     and the instructors should have access.
+     <div class="figure">
+<p><img src="repolist.png"  alt="repolist.png" /></p>
+<p>Repository list</p>
+</div>
+
+</li>
+<li>Copy the repository URL from the repo page. Note: If you know how to use
+     Github with SSH, feel free to do so. We use HTTPS here because that is now
+     Github's default.
+     <div class="figure">
+<p><img src="repourl.png"  alt="repourl.png" /></p>
+<p>Getting the repository URL</p>
+</div>
+
+</li>
+<li>Open your terminal. We are going to clone a copy of the repo so that
+     we can do our work and push it back to Github. First <code>cd</code> to the directory
+     you want your homework folder in (if you don't know what that means, please
+     take a few minutes to read section 3 of
+     <a href="http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Unix/UnixBareMn.pdf">this document</a>). Now type (When prompted for your username and password
+     here, use your <i>Github</i> username and password):
+
+
+
+<pre class="example">git clone repo_url_you_copied
+</pre>
+
+<p>
+     put together, that all looks like this:
+</p>
+
+
+<pre class="example">bash-3.2$ mkdir penntest
+bash-3.2$ cd penntest
+/Users/zwass/penntest
+bash-3.2$ git clone https://github.com/cis194s13/hw_penntest
+Cloning into 'hw_penntest'...
+Username for 'https://github.com': penntest
+Password for 'https://penntest@github.com':
+warning: You appear to have cloned an empty repository.
+bash-3.2$
+</pre>
+
+<p>
+     We've now copied the (empty) repository onto our computer, so we can <code>cd</code>
+     into that directory:
+</p>
+
+
+<pre class="example">bash-3.2$ ls
+hw_penntest
+bash-3.2$ cd hw_penntest/
+/Users/zwass/penntest/hw_penntest
+bash-3.2$
+</pre>
+
+
+</li>
+<li>Now we're going to add the class homework repository as an "upstream" to
+     our personal homework repository. This will allow us to pull required
+     homework files directly from Github. You'll need to execute the following
+     command inside the repository (directory) you just cloned:
+
+
+
+<pre class="example">git remote add upstream https://github.com/cis194s13/hw.git
+</pre>
+
+<p>
+     This added the class repository as a git "remote", which means that you can
+     pull changes down from that repository and into your personal repository.
+     Let's do that now. Run the command:
+</p>
+
+
+<pre class="example">git pull upstream master
+</pre>
+
+<p>
+     and you should see that files were copied from the server.
+</p>
+</li>
+<li>Almost done. We need to create a branch that we will make our submissions
+     against. First, create a new branch:
+
+
+
+<pre class="example">git branch submit
+</pre>
+
+<p>
+     Now push that branch to Github:
+</p>
+
+
+<pre class="example">git push origin submit
+</pre>
+
+<p>
+     Let's also push the master branch to Github:
+</p>
+
+
+<pre class="example">git push origin master
+</pre>
+
+</li>
+</ol>
+
+
+<p>
+Whew! We've got the setup out of the way, now you can get to work.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Working on Homework</h2>
+<div class="outline-text-2" id="text-3">
+
+<ol>
+<li>First get any files/folders that were added to the class repository:
+
+
+
+<pre class="example">git pull upstream master
+</pre>
+
+
+</li>
+<li>Now do your work.
+
+</li>
+<li>Here's how we get our work onto Github. Pretend we did our homework in the
+     directory <code>hw0</code> (inside our repository directory), in the files <code>file1</code> and
+     <code>file2</code>. First we need to <code>git add</code> all the files:
+
+
+
+<pre class="example">git add hw0/file1 hw0/file2
+</pre>
+
+<p>
+     Now we make a commit:
+</p>
+
+
+<pre class="example">git commit -m "done with hw0"
+</pre>
+
+<p>
+     Now we can push our changes to Github:
+</p>
+
+
+<pre class="example">git push origin master
+</pre>
+
+
+</li>
+<li>Since we've pushed our work to Github, now we just need to let the
+     submission system know that we're done. First we create a Pull Request on
+     Github. Go to your repository on Github and click the Pull Request button.
+     <div class="figure">
+<p><img src="pullbutton.png"  alt="pullbutton.png" /></p>
+<p>Pull request button</p>
+</div>
+
+</li>
+<li>Set up the pull request with the base branch as 'submit'
+     <div class="figure">
+<p><img src="makepull1.png"  alt="makepull1.png" /></p>
+<p>Changing the base branch</p>
+</div>
+
+
+<div class="figure">
+<p><img src="makepull2.png"  alt="makepull2.png" /></p>
+<p>Completed pull request</p>
+</div>
+<p>
+     And send the pull request.
+</p>
+</li>
+<li>Now go to the 'Submit Homework' tab on the <a href="http://cis194.herokuapp.com/">submission website</a>. Select the
+     assignment you'd like to submit, and paste the URL of the pull request you
+     just created. After clicking the 'Submit Assignment' button, verify that
+     the class bot acknowledged your submission. Note: Don't click the 'Merge
+     Pull Request' button on Github.
+     <div class="figure">
+<p><img src="ackpull.png"  alt="ackpull.png" /></p>
+<p>Acknowledged pull request</p>
+</div>
+</li>
+</ol>
+
+<p>  Though we only require that you <i>submit</i> your homework with git, it would be
+  wise to use git to keep track of your changes before you submit. To learn more
+  about git, check out Code School's <a href="http://try.github.com/levels/1/challenges/1">Try Git</a> for a fun 15 minute intro.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Notes</h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>If you don't want to type your password every time you try to push or pull
+    from Github, see the documentation on
+    <a href="https://help.github.com/articles/set-up-git#password-caching">password caching</a>.
+</li>
+<li>Feel free to work on a branch other than <code>master</code> (if you know what this
+    means), but please make pull requests against the <code>submit</code> branch.
+</li>
+<li>If you're curious about how this system works, check out the
+    <a href="https://github.com/zwass/github-class-management">Github repo</a>.
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>

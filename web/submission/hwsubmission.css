@@ -1,0 +1,13 @@
+div#content {
+    width: 800px;
+}
+
+div.figure {
+    padding: 0em;
+}
+
+div.figure p {
+    font-size: .8em;
+    font-style: italic;
+    margin: .5em 1em;
+}

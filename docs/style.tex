@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+
+\newcommand{\doo}{\textbf{DO}}
+\newcommand{\dont}{\textbf{DON'T}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\LARGE Good Haskell Style}
+\end{center}
+\bigskip
+
+All your submitted programming assignments should \emph{emerge
+  creatively} from the following style guidelines.  Programming is
+just as much social art form as it is engineering discipline, and as
+any artist knows, constraints serve to enhance rather than quench
+creativity.
+
+These guidelines will be extended as the semester progresses.
+
+\begin{itemize}
+\item \doo\ use \texttt{camelCase} for function and variable names.
+
+\item \doo\ use descriptive function names, which are as long as they
+  need to be but no longer than they have to be.  Good:
+  \texttt{solveRemaining}.  Bad: \texttt{slv}. Ugly:
+  \texttt{solveAllTheCasesWhichWeHaven'tYetProcessed}.
+
+\item \dont\ use tab characters.  Haskell is layout-sensitive and tabs
+  Mess Everything Up.  I don't care how you feel about tabs when
+  coding in other languages.  Just trust me on this one.  Note this
+  does not mean you need to hit space a zillion times to indent each
+  line; your Favorite Editor ought to support auto-indentation using
+  spaces instead of tabs.
+
+\item \doo\ try to keep every line under 80 characters.  This isn't a
+  hard and fast rule, but code that is line-wrapped by an editor looks
+  horrible.
+
+\item \doo\ give every top-level function a type signature.  Type
+  signatures enhance documentation, clarify thinking, and provide
+  nesting sites for endangered bird species.  Top-level type signatures
+  also result in better error messages. With no type signatures, type
+  errors tend to show up far from where the real problem is; explicit
+  type signatures help localize type errors.
+
+  Locally defined functions and constants (part of a \texttt{let}
+  expression or \texttt{where} clause) do not need type signatures,
+  but adding them doesn't hurt (in particular, the argument above
+  about localizing type errors still applies).
+
+\item \doo\ precede every top-level function by a comment explaining
+  what it does.
+
+\item \doo\ use \texttt{-Wall}.  Either pass \texttt{-Wall} to
+  \texttt{ghc} on the command line, or (easier) put
+\begin{verbatim}
+{-# OPTIONS_GHC -Wall #-}
+\end{verbatim}
+at the top of your \texttt{.hs} file.  All your submitted programs
+should compile with no warnings.
+
+\item \doo, as much as possible, break up your programs into small
+  functions that do one thing, and compose them to create more complex
+  functions.
+
+\item \doo\ make all your functions \emph{total}.  That is, they
+  should give sensible results (and not crash) for every input.
+\end{itemize}
+
+\end{document}

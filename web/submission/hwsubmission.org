@@ -1,0 +1,170 @@
+#+TITLE:     Homework Submission
+#+AUTHOR:    Zachary Wasserman
+#+DATE:      2013-01-20
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:nil -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS:   creator:nil timestamp:nil author:nil postamble:nil
+#+BIND: org-export-html-postamble nil
+#+STYLE: <link rel="stylesheet" type="text/css" href="hwsubmission.css" />
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+
+* Prerequisites
+  - Mac or Linux machine. This is possible on Windows, but some commands will be
+    different.
+  - An account on Github. If you have an existing one, feel free to use that.
+    Otherwise, sign up at [[https://github.com/][github.com]].
+  - Git installed. You can install via [[http://git-scm.com/downloads][binary]], or your favored package manager.
+
+
+* Initial Setup
+  This is a new system. If you encounter errors on our site, please copy and
+  paste the full web page into a private Piazza question. If you have trouble
+  with git/Github, please ask a public Piazza question.
+  1. [[http://cis194.herokuapp.com/register/][Create an account]] in our submission system. /Your username should be your
+     PennKey./
+
+  2. Now log on to Github. Change your view to the CIS194 class
+     context.
+     #+CAPTION: The context menu
+     [[file:context.png]]
+
+  3. Click on the repository we've created with your name. The name will be in
+     the form 'hw_pennkey'. Note this repository is private, and only you
+     and the instructors should have access.
+     #+CAPTION: Repository list
+     [[file:repolist.png]]
+
+  4. Copy the repository URL from the repo page. Note: If you know how to use
+     Github with SSH, feel free to do so. We use HTTPS here because that is now
+     Github's default.
+     #+CAPTION: Getting the repository URL
+     [[file:repourl.png]]
+
+  5. Open your terminal. We are going to clone a copy of the repo so that
+     we can do our work and push it back to Github. First =cd= to the directory
+     you want your homework folder in (if you don't know what that means, please
+     take a few minutes to read section 3 of
+     [[http://heather.cs.ucdavis.edu/~matloff/UnixAndC/Unix/UnixBareMn.pdf][this document]]). Now type (When prompted for your username and password
+     here, use your /Github/ username and password):
+     #+begin_src shell
+git clone repo_url_you_copied
+     #+end_src
+     put together, that all looks like this:
+     #+begin_src shell
+bash-3.2$ mkdir penntest
+bash-3.2$ cd penntest
+/Users/zwass/penntest
+bash-3.2$ git clone https://github.com/cis192s13/hw_penntest
+Cloning into 'hw_penntest'...
+Username for 'https://github.com': penntest
+Password for 'https://penntest@github.com':
+warning: You appear to have cloned an empty repository.
+bash-3.2$
+     #+end_src
+     We've now copied the (empty) repository onto our computer, so we can =cd=
+     into that directory:
+     #+begin_src shell
+bash-3.2$ ls
+hw_penntest
+bash-3.2$ cd hw_penntest/
+/Users/zwass/penntest/hw_penntest
+bash-3.2$
+     #+end_src
+
+  6. Now we're going to add the class homework repository as an "upstream" to
+     our personal homework repository. This will allow us to pull required
+     homework files directly from Github. You'll need to execute the following
+     command inside the repository (directory) you just cloned:
+     #+begin_src shell
+git remote add upstream https://github.com/cis192s13/hw.git
+     #+end_src
+     This added the class repository as a git "remote", which means that you can
+     pull changes down from that repository and into your personal repository.
+     Let's do that now. Run the command:
+     #+begin_src shell
+git pull upstream master
+     #+end_src
+     and you should see that files were copied from the server.
+
+  7. Almost done. We need to create a branch that we will make our submissions
+     against. First, create a new branch:
+     #+begin_src shell
+git branch submit
+     #+end_src
+     Now push that branch to Github:
+     #+begin_src shell
+git push origin submit
+     #+end_src
+     Let's also push the master branch to Github:
+     #+begin_src shell
+git push origin master
+     #+end_src
+
+Whew! We've got the setup out of the way, now you can get to work.
+
+
+* Working on Homework
+  1. First get any files/folders that were added to the class repository:
+     #+begin_src shell
+git pull upstream master
+     #+end_src
+
+  2. Now do your work.
+
+  3. Here's how we get our work onto Github. Pretend we did our homework in the
+     directory =hw0= (inside our repository directory), in the files =file1= and
+     =file2=. First we need to =git add= all the files:
+     #+begin_src shell
+git add hw0/file1 hw0/file2
+     #+end_src
+     Now we make a commit:
+     #+begin_src shell
+git commit -m "done with hw0"
+     #+end_src
+     Now we can push our changes to Github:
+     #+begin_src shell
+git push origin master
+     #+end_src
+
+  4. Since we've pushed our work to Github, now we just need to let the
+     submission system know that we're done. First we create a Pull Request on
+     Github. Go to your repository on Github and click the Pull Request button.
+     #+CAPTION: Pull request button
+     [[file:pullbutton.png]]
+
+  5. Set up the pull request with the base branch as 'submit'
+     #+CAPTION: Changing the base branch
+     [[file:makepull1.png]]
+
+     #+CAPTION: Completed pull request
+     [[file:makepull2.png]]
+     And send the pull request.
+
+  6. Now go to the 'Submit Homework' tab on the [[http://cis194.herokuapp.com/][submission website]]. Select the
+     assignment you'd like to submit, and paste the URL of the pull request you
+     just created. After clicking the 'Submit Assignment' button, verify that
+     the class bot acknowledged your submission. Note: Don't click the 'Merge
+     Pull Request' button on Github.
+     #+CAPTION: Acknowledged pull request
+     [[file:ackpull.png]]
+  Though we only require that you /submit/ your homework with git, it would be
+  wise to use git to keep track of your changes before you submit. To learn more
+  about git, check out Code School's [[http://try.github.com/levels/1/challenges/1][Try Git]] for a fun 15 minute intro.
+
+
+* Notes
+  - If you don't want to type your password every time you try to push or pull
+    from Github, see the documentation on
+    [[https://help.github.com/articles/set-up-git#password-caching][password caching]].
+  - Feel free to work on a branch other than =master= (if you know what this
+    means), but please make pull requests against the =submit= branch.
+  - If you're curious about how this system works, check out the
+    [[https://github.com/zwass/github-class-management][Github repo]].

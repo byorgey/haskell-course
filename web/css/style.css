@@ -1,0 +1,95 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    text-align: justify;
+    font-family: Optima, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+#canvas {
+    width:700px;
+    margin:20px auto;
+}
+
+#nav {
+    background-color:#ddddff;
+    padding:10px 30px;
+    text-align: center;
+}
+
+#content {
+    width: 630px;
+    background-color:#ffffff;
+    padding:20px 30px;        
+}
+
+#name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#content h1 {
+    padding:0px;
+    font-size:28px;
+    font-weight:bold;
+    color:#00005e;
+}
+
+#content h2 {
+    font-size:1.5em;
+    font-weight:bold;
+    color:#00005e
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/************* MENU ************/
+
+a {
+    font-weight: bold;	
+    text-decoration: none;
+    color:#00005e;
+}
+
+a img {
+  border:none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color:#6d9fb4;
+}
+
+#contact {
+  float:left;
+  width: 630px;
+  font:13px/22px Optima, Arial, Helvetica, sans-serif;
+}
+
+li {
+/*  margin-bottom: 10px; */
+}
+
+/*** Syntax highlighting ***/
+
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+pre.sourceCode span.kw { color: #007020; font-weight: bold; } 
+pre.sourceCode span.dt { color: #902000; }
+pre.sourceCode span.dv { color: #40a070; }
+pre.sourceCode span.bn { color: #40a070; }
+pre.sourceCode span.fl { color: #40a070; }
+pre.sourceCode span.ch { color: #4070a0; }
+pre.sourceCode span.st { color: #4070a0; }
+pre.sourceCode span.co { color: #60a0b0; font-style: italic; }
+pre.sourceCode span.ot { color: #007020; }
+pre.sourceCode span.al { color: red; font-weight: bold; }
+pre.sourceCode span.fu { color: #06287e; }
+pre.sourceCode span.re { }
+pre.sourceCode span.er { color: red; font-weight: bold; }
+
