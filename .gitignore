@@ -31,3 +31,7 @@ diagrams/*.
 *.aux
 *.log
 *.out
+*.nav
+*.snm
+*.toc
+*.vrb
