@@ -1,0 +1,8 @@
+---
+week: 8
+date: 11 March
+topic: IO
+name: 08-IO
+due: Monday, 18 March
+extras: Employee.hs company.txt
+---

@@ -1,0 +1,17 @@
+Really playing with fire here!  We tell them to implement Ord for
+GuestList but say nothing about Eq.  In fact, the solution currently
+derives Eq for GuestList but then defines Ord by comparing fun
+scores.  This is, of course, a no-no to have such different instances!
+It can come around to bite you if you define the Ord instance by
+defining (<=) -- the default implementation of 'compare' calls (==) so
+can give seemingly bizarre results.
+
+In practice, nothing in the assignment will really call compare -- but
+our tester does which is why I noticed.  And anyway it would be nice
+to have everything on the up-and-up.  Not sure what the best solution
+is.
+
+John:
+Adding to this: having them define their own datatype makes it pretty
+hard to write a tester that can properly pattern match or build
+instances. 
