@@ -1,0 +1,57 @@
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage[outputdir=diagrams,backend=ps,extension=eps]{diagrams-latex}
+\usepackage{prettyref}
+\usepackage{todonotes}
+\usepackage{amsmath}
+
+\newcounter{excount}
+\setcounter{excount}{1}
+\newcommand{\exercisect}[1]{
+  \vspace{2em}\noindent
+  {\large \textbf{Exercise\ \arabic{excount}#1}}
+  \addtocounter{excount}{1}
+}
+\newcommand{\exerciset}[1]{\exercisect{: #1}}
+\newcommand{\exercise}{\exercisect{}}
+\newcommand{\opt}{
+  {\large \textbf{(Optional)}} 
+}
+
+\newenvironment{example}{\medskip \noindent \emph{Example}: }{}
+\newenvironment{rem}{\medskip \noindent \textbf{Remark.}}{}
+
+\graphicspath{{images/}}
+
+\newrefformat{fig}{Figure~\ref{#1}}
+\newrefformat{sec}{section~\ref{#1}}
+\newrefformat{eq}{equation~\eqref{#1}}
+\newrefformat{prob}{Problem~\ref{#1}}
+\newrefformat{tab}{Table~\ref{#1}}
+\newrefformat{thm}{Theorem~\ref{#1}}
+\newrefformat{lem}{Lemma~\ref{#1}}
+\newrefformat{prop}{Proposition~\ref{#1}}
+\newrefformat{defn}{Definition~\ref{#1}}
+\newrefformat{cor}{Corollary~\ref{#1}}
+\newcommand{\pref}[1]{\prettyref{#1}}
+
+% \Pref is just like \pref but it uppercases the first letter; for use
+% at the beginning of a sentence.
+\newcommand{\Pref}[1]{%
+  \expandafter\ifx\csname r@#1\endcsname\relax {\scriptsize[ref]}
+    \else
+    \edef\reftext{\prettyref{#1}}\expandafter\MakeUppercase\reftext
+    \fi
+}
+
+\newcommand{\term}[1]{\emph{#1}}
+\newcommand{\ie}{\emph{i.e.}}
+\newcommand{\etc}{\emph{etc.}}
+
+\let\oldtodo\todo
+\renewcommand{\todo}[1]{\oldtodo[inline,size=\small]{#1}}
+
+\let\oldmaketitle\maketitle
+\renewcommand{\maketitle}{\oldmaketitle\smallskip\hrule\bigskip}
+
