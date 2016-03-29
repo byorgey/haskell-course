@@ -1,0 +1,12 @@
+
+* Grading breakdown
+** Exercise 1 - Higher-order programming: 5 points
+*** 1: 2 points
+*** 2: 2 points
+*** 3: 1 point
+** Exercise 2 - Wholemeal programming: 5 points
+*** 1: 2 points
+*** 2: 3 points
+** Exercise 3 - Folds
+*** 1 - xor: 2 points
+*** 2 - map: 3 points
