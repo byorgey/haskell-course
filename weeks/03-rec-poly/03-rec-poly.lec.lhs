@@ -267,7 +267,7 @@ show` in order to convert, say, a list of `Int`s into a list of
 One important thing to remember about polymorphic functions is that
 **the caller gets to pick the types**.  When you write a polymorphic
 function, it must work for every possible input type.  This---together
-with the fact that Haskell has no way to directly make make decisions
+with the fact that Haskell has no way to directly make decisions
 based on what type something is---has some interesting implications
 which we'll explore later.
 
